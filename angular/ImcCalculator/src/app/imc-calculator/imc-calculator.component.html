@@ -1,0 +1,17 @@
+
+<div class="container">
+    <h1>Calculadora de IMC</h1>
+    <label for="peso">Peso (kg):</label>
+    <input placeholder="Insira seu peso" type="number" id="peso" [(ngModel)]="peso" />
+  
+    <label for="altura">Altura (m):</label>
+    <input placeholder="Insira sua altura" type="number" id="altura" [(ngModel)]="altura" />
+  
+    <button (click)="calcularIMC()">Calcular</button>
+  
+    <div *ngIf="imc !== null">
+      <p>Seu IMC é: {{imc.toFixed(2)}}</p>
+      <p>Classificação: {{getClassificacaoIMC(imc)}}</p>
+    </div>
+  </div>
+  
